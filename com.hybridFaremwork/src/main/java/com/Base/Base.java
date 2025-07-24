@@ -7,6 +7,8 @@ import org.testng.annotations.*;
 
 import com.Configure.PropertiesReader;
 import com.Drivers.DriverFactory;
+import com.Utility.ExcelUtils;
+import com.Utility.LoginUtils;
 
 public class Base {
 
@@ -30,6 +32,8 @@ public class Base {
 
 		driver.manage().timeouts().pageLoadTimeout(pageloadTime, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(implicitTime, TimeUnit.SECONDS);
+		String Username = ExcelUtils.writeToExcel("Login_Cred", browserName, implicitTime, pageloadTime, browserName);
+		LoginUtils.loginwithCred(driver, browserName, browserName);
 	}
 
 	@AfterMethod

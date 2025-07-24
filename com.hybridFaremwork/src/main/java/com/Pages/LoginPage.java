@@ -1,15 +1,18 @@
 package com.Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.Configure.PropertiesReader;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
 	WebDriver driver;
+	WebDriverWait wait;
 
 	@FindBy(xpath = "//input[@name='username']")
 	private WebElement userName;
@@ -26,18 +29,17 @@ public class LoginPage {
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
-	public void inputUsername() throws Exception 
+	public void inputUsername(String User)
 	{
-		String Username = PropertiesReader.getConfigureWeb("user");
-		userName.sendKeys(Username);
+		userName.sendKeys(User);
 	}
 	
-	public void inputPassword () throws Exception
+	public void inputPassword (String Pass)
 	{
-		String Password =  PropertiesReader.getConfigureWeb("pass");
-		passWord.sendKeys(Password);
+		passWord.sendKeys(Pass);
 	}
 	
 	public void login ()

@@ -6,7 +6,7 @@ import com.Base.Base;
 import com.Pages.LoginPage;
 import com.Utility.Screenshots;
 
-public class NewTest extends Base {
+public class login extends Base {
 
 	WebDriver driver;
 

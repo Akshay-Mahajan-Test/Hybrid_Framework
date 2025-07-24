@@ -1,6 +1,7 @@
 package com.Pages;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +18,11 @@ public class AddJob {
 	@FindBy(xpath = "//span[text()='Job']")
 	private WebElement job;
 	
-	@FindBy(xpath = "//u[@Role='menu']")
-	private WebElement jobMenu;
+//	@FindBy(xpath = "//u[@Role='menu']")
+//	private WebElement jobMenu;
 	
-	@FindBy(xpath = "")
-	private WebElement addFile;
+	@FindBy(xpath = "//a[@role=\"menuitem\"]")
+	private List <WebElement> jobMenu;
 	
 	@FindBy(xpath = "//button[text()=' Add ']")
 	private WebElement add;
@@ -59,9 +60,16 @@ public class AddJob {
 		job.click();
 	}
 	
-	public void clickonJobMenu()
+	public void clickonJobMenu(String expectedText)
 	{
 		wait.until(ExpectedConditions.visibilityOfAllElements(jobMenu));
+		for (WebElement element : jobMenu)
+		{
+			if (element.getText().equalsIgnoreCase(expectedText))
+			{
+				element.click();
+			}
+		}
 	}
 	
 	public void clickonAdd()
@@ -69,8 +77,28 @@ public class AddJob {
 		add.click();
 	}
 	
-	public void addjobTitle()
+	public void addjobTitle(String Jobtitle)
 	{
-		
+		jobTitle.sendKeys(Jobtitle);
+	}
+	
+	public void jobDescription (String Desription)
+	{
+		jobDesc.sendKeys(Desription);
+	}
+	
+	public void jobNoteData (String Note)
+	{
+		note.sendKeys(Note);
+	}
+	
+	public void saveTheJob()
+	{
+		submit.click();
+	}
+	
+	public void cancelTheJob()
+	{
+		cancel.click();
 	}
 }

@@ -70,7 +70,7 @@ public class AddNewAdmin {
 		employeeName.clear();
 		employeeName.sendKeys(Prefix);
 		
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(suggestionList));
+	//	wait.until(ExpectedConditions.visibilityOfAllElements(null);
 		
 	}
 	

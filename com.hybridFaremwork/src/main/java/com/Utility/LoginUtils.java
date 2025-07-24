@@ -2,7 +2,7 @@ package com.Utility;
 
 import org.openqa.selenium.WebDriver;
 
-import com.Pages.LoginPage;
+import com.web.Pages.LoginPage;
 
 public class LoginUtils {
 	

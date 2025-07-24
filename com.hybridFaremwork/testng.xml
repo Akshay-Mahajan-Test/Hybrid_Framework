@@ -3,7 +3,7 @@
 <suite name="Hybrid Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="NewTest"/>
+      <class name="AddNewJob"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -3,8 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.Base.Base;
-import com.Pages.LoginPage;
-import com.Utility.Screenshots;
+import com.web.Pages.LoginPage;
 
 public class login extends Base {
 
@@ -14,8 +13,8 @@ public class login extends Base {
 	public void logintest() throws Exception {
 //		driver.manage().window().maximize();
 		LoginPage loginpage = new LoginPage(getDriver());
-		loginpage.inputUsername();
-		loginpage.inputPassword();
+		loginpage.inputUsername(null);
+		loginpage.inputPassword(null);
 		//Screenshots.takeScreenshot(driver, "logintest");
 		loginpage.login();
 

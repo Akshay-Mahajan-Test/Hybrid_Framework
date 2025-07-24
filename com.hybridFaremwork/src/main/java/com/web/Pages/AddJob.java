@@ -1,4 +1,4 @@
-package com.Pages;
+package com.web.Pages;
 
 import java.time.Duration;
 import java.util.List;

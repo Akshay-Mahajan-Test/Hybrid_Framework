@@ -6,13 +6,15 @@ import java.util.Properties;
 
 public class PropertiesReader {
 
-	public static String PROPFILEPATH_1 = System.getProperty("user.dir") + File.separator + "configuration" + File.separator 
-			+ "WebConfig.properties";
+	public static String PROPFILEPATH_1 = System.getProperty("user.dir") + File.separator + "configuration"
+			+ File.separator + "WebConfig.properties";
 //	public static String PROPFILEPATH_1 = System.getProperty("/com.hybridFaremwork/configuration/WebConfig.properties");
 	public static String PROPFILEPATH_2 = System.getProperty("user.dir") + File.separator + "configuration"
-			+ "\\AndroidConfig.properties";
+			+ "AndroidConfig.properties";
 	public static String PROPFILEPATH_3 = System.getProperty("user.dir") + File.separator + "configuration"
-			+ "\\iOSConfig.properties";
+			+ "iOSConfig.properties";
+	public static String FILEPATH = System.getProperty("user.dir") + File.separator + "resources" + File.separator
+			+ "User_Details_HY.xlsx";
 
 	public static String getValue(String filepath, String key) throws Exception {
 		FileInputStream fis = new FileInputStream(filepath);

@@ -12,14 +12,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
 	
-	public static void writeToExcel (String filePath, String sheetName, int rowNum, int cellNum, String value)
+	public static String writeToExcel (String filePath, String sheetName, int rowNum, int cellNum)
 	{
         XSSFWorkbook workbook = new XSSFWorkbook();
 		Sheet sheet = workbook.createSheet(sheetName);
 
         Row row = sheet.createRow(rowNum);
         Cell cell = row.createCell(cellNum);
-        cell.setCellValue(value);
 
         try (FileOutputStream outputStream = new FileOutputStream(Paths.get(filePath).toFile())) {
             workbook.write(outputStream);
@@ -33,5 +32,7 @@ public class ExcelUtils {
                 System.out.println("Error closing workbook: " + e.getMessage());
             }
         }
+		return filePath;
+		
 	}
 }

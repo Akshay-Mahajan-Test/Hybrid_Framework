@@ -1,8 +1,8 @@
 package com.testSuite;
 
 import com.Base.Base;
-import com.Pages.AddNewAdmin;
-import com.Pages.HomePage;
+import com.web.Pages.AddNewAdmin;
+import com.web.Pages.HomePage;
 
 public class AddnewUser extends Base{
 	

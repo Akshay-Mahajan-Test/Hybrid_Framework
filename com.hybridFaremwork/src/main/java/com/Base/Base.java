@@ -32,8 +32,9 @@ public class Base {
 
 		driver.manage().timeouts().pageLoadTimeout(pageloadTime, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(implicitTime, TimeUnit.SECONDS);
-		String Username = ExcelUtils.writeToExcel("Login_Cred", browserName, implicitTime, pageloadTime, browserName);
-		LoginUtils.loginwithCred(driver, browserName, browserName);
+
+		LoginUtils.loginwithCred(driver, ExcelUtils.writeToExcel(PropertiesReader.FILEPATH, "Login_Cred", 2, 2),
+				ExcelUtils.writeToExcel(PropertiesReader.FILEPATH, "Login_Cred", 3, 3));
 	}
 
 	@AfterMethod

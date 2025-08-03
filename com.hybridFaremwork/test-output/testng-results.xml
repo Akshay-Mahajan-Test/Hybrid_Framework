@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-24T11:45:19 IST" name="Default suite" finished-at="2025-07-24T11:45:34 IST" duration-ms="15062">
+  <suite started-at="2025-08-03T17:41:15 IST" name="Default suite" finished-at="2025-08-03T17:41:22 IST" duration-ms="7178">
     <groups>
     </groups>
-    <test started-at="2025-07-24T11:45:19 IST" name="Default test" finished-at="2025-07-24T11:45:34 IST" duration-ms="15062">
-      <class name="com.testSuite.login">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.testSuite.login@389c4eb1]" started-at="2025-07-24T11:45:19 IST" name="setUp" finished-at="2025-07-24T11:45:32 IST" duration-ms="13452" status="PASS">
+    <test started-at="2025-08-03T17:41:15 IST" name="Default test" finished-at="2025-08-03T17:41:22 IST" duration-ms="7178">
+      <class name="com.mobile.launch_App">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.mobile.launch_App@a37aefe]" started-at="2025-08-03T17:41:15 IST" name="setUp" finished-at="2025-08-03T17:41:21 IST" duration-ms="6278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="logintest()[pri:0, instance:com.testSuite.login@389c4eb1]" started-at="2025-07-24T11:45:33 IST" name="logintest" finished-at="2025-07-24T11:45:33 IST" duration-ms="805" status="PASS">
+        <test-method signature="launchApp()[pri:0, instance:com.mobile.launch_App@a37aefe]" started-at="2025-08-03T17:41:21 IST" name="launchApp" finished-at="2025-08-03T17:41:21 IST" duration-ms="60" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logintest -->
-        <test-method is-config="true" signature="QuitDriver()[pri:0, instance:com.testSuite.login@389c4eb1]" started-at="2025-07-24T11:45:33 IST" name="QuitDriver" finished-at="2025-07-24T11:45:34 IST" duration-ms="409" status="PASS">
+        </test-method> <!-- launchApp -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mobile.launch_App@a37aefe]" started-at="2025-08-03T17:41:21 IST" name="tearDown" finished-at="2025-08-03T17:41:22 IST" duration-ms="686" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- QuitDriver -->
-      </class> <!-- com.testSuite.login -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mobile.launch_App -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

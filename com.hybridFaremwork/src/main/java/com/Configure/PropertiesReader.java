@@ -10,9 +10,9 @@ public class PropertiesReader {
 			+ File.separator + "WebConfig.properties";
 //	public static String PROPFILEPATH_1 = System.getProperty("/com.hybridFaremwork/configuration/WebConfig.properties");
 	public static String PROPFILEPATH_2 = System.getProperty("user.dir") + File.separator + "configuration"
-			+ "AndroidConfig.properties";
+			+ File.separator + "AndroidConfig.properties";
 	public static String PROPFILEPATH_3 = System.getProperty("user.dir") + File.separator + "configuration"
-			+ "iOSConfig.properties";
+			+ File.separator + "iOSConfig.properties";
 	public static String FILEPATH = System.getProperty("user.dir") + File.separator + "resources" + File.separator
 			+ "User_Details_HY.xlsx";
 

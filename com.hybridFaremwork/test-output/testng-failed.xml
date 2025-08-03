@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="NewTest">
+      <class name="com.mobile.launch_App">
         <methods>
+          <include name="launchApp"/>
           <include name="setUp"/>
-          <include name="logintest"/>
-          <include name="QuitDriver"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- NewTest -->
+      </class> <!-- com.mobile.launch_App -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

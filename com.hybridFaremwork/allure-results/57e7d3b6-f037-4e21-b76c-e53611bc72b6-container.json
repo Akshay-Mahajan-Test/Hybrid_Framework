@@ -1,0 +1,1 @@
+{"uuid":"57e7d3b6-f037-4e21-b76c-e53611bc72b6","name":"com.Base.MobileBase.setUp","children":["39dd74ee-1563-45ca-a696-90a63f2fd90c"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1754223075058,"stop":1754223081329}],"afters":[],"start":1754223075057,"stop":1754223081330}

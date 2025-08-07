@@ -2,6 +2,8 @@ package com.Drivers;
 
 import java.io.File;
 
+import org.testng.annotations.*;
+
 import com.Configure.PropertiesReader;
 
 import io.appium.java_client.AppiumDriver;
@@ -17,6 +19,7 @@ public class AppiumDriverManager {
 		return driver;
 	}
 
+	@AfterTest
 	public static void quitDriver() {
 		if (driver != null) {
 			driver.quit();
@@ -24,24 +27,27 @@ public class AppiumDriverManager {
 		}
 	}
 
-	public static AppiumDriver initDriver(String Platform) throws Exception {
-		switch (Platform) {
+	@Parameters ({"platformName", "platformVersion", "deviceName"})
+	@BeforeTest
+	public static AppiumDriver initDriver(String platformName,  String platformVersion, String deviceName) throws Exception {
+		switch (platformName) {
 		case "Android":
-			String apkUrl = System.getProperty("user.dir") + File.separator + "apk" + File.separator
-					+ "ApiDemos-debug.apk";
+			String apkUrl = System.getProperty("user.dir") + File.separator
+					+ PropertiesReader.getConfigureAndroid("androidApp");
 			UiAutomator2Options ops = new UiAutomator2Options()
-					.setPlatformName(PropertiesReader.getConfigureAndroid("platformname"))
-					.setDeviceName(PropertiesReader.getConfigureAndroid("devicename"))
-					.setPlatformVersion(PropertiesReader.getConfigureAndroid("platformversion"))
+					.setPlatformVersion(platformVersion)
+					.setDeviceName(deviceName)
 					.setApp(apkUrl);
 			driver = new AndroidDriver(ops);
 			break;
-			
+
 		case "iOS":
 			String ipkUrl = System.getProperty("user.dir") + File.separator + "apk" + File.separator + ".ipa";
-			XCUITestOptions ops1 = new XCUITestOptions().setPlatformName(PropertiesReader.getConfigureiOS("platform"))
-					.setDeviceName(null).setApp(ipkUrl);
-			driver =  new IOSDriver(ops1);
+			XCUITestOptions ops1 = new XCUITestOptions()
+					.setPlatformName(platformName)
+					.setDeviceName(deviceName)
+					.setApp(ipkUrl);
+			driver = new IOSDriver(ops1);
 			break;
 
 		default:

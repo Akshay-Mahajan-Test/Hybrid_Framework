@@ -1,6 +1,7 @@
 package com.testSuite;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import com.Base.Base;
 import com.Configure.PropertiesReader;

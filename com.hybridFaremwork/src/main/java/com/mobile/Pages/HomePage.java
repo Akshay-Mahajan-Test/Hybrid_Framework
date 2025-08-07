@@ -1,39 +1,44 @@
 package com.mobile.Pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.AppiumDriver;
+import com.Base.MobileBase;
 
-public class HomePage {
-	
-	AppiumDriver driver;
-	WebDriverWait wait;
-	
-	@FindBy()
-	private WebElement a;
-	
-	@FindBy()
-	private WebElement b;
-	
-	@FindBy()
-	private WebElement c;
-	
-	@FindBy()
-	private WebElement d;
-	
-	@FindBy()
-	private WebElement e;
-	
-	public HomePage (AppiumDriver driver)
-	{
-		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+public class HomePage extends MobileBase {
+
+	@FindBy(id = "View menu")
+	private WebElement humBergerMenu;
+
+	@FindBy(id = "Login Menu Item")
+	private WebElement loginItem;
+
+	@FindBy(id = "nameET")
+	private WebElement userName;
+
+	@FindBy(id = "passwordET")
+	private WebElement passWord;
+
+	@FindBy(id = "buttonLL")
+	private WebElement loginBtn;
+
+	public HomePage clickHumberger() {
+		clickON(humBergerMenu);
+		return this;
 	}
-	
-	
-	
+
+	public HomePage enterUserName(String user) {
+		sendKeysText(userName, user);
+		return this;
+	}
+
+	public HomePage enterPassWord(String Pass) {
+		sendKeysText(passWord, Pass);
+		return this;
+	}
+
+	public ProductPage clickBtn() {
+		clickON(loginBtn);
+		return new ProductPage();
+	}
 }

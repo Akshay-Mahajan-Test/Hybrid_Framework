@@ -3,32 +3,23 @@ package com.mobile;
 import org.testng.annotations.Test;
 
 import com.Base.MobileBase;
+import com.mobile.Pages.HomePage;
+import com.mobile.Pages.ProductPage;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterClass;
+public class LoginTest extends MobileBase {
 
-public class LoginTest extends MobileBase{
-	
-	
-  @Test
-  public void f() {
-  }
-  @BeforeMethod
-  public void beforeMethod() {
-  }
+	HomePage homePage;
+	ProductPage productPage;
 
-  @AfterMethod
-  public void afterMethod() {
-  }
+	@Test
+	public void validCredentials() {
+		homePage = new HomePage();
+		homePage.clickHumberger();
+		homePage.clickonLoginIn();
+		homePage.enterUserName("bod@example.com");
+		homePage.enterPassWord("10203040");
+		productPage = homePage.clickBtn();
 
-  @BeforeClass
-  public void beforeClass() {
-  }
-
-  @AfterClass
-  public void afterClass() {
-  }
+	}
 
 }

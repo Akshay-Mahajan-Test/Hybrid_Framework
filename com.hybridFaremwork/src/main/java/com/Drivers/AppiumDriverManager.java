@@ -19,7 +19,7 @@ public class AppiumDriverManager {
 		return driver;
 	}
 
-	@AfterTest
+	@AfterMethod
 	public static void quitDriver() {
 		if (driver != null) {
 			driver.quit();
@@ -28,8 +28,8 @@ public class AppiumDriverManager {
 	}
 
 	@Parameters ({"platformName", "platformVersion", "deviceName"})
-	@BeforeTest
-	public static AppiumDriver initDriver(String platformName,  String platformVersion, String deviceName) throws Exception {
+	@BeforeMethod
+	public AppiumDriver initDriver(String platformName,  String platformVersion, String deviceName) throws Exception {
 		switch (platformName) {
 		case "Android":
 			String apkUrl = System.getProperty("user.dir") + File.separator

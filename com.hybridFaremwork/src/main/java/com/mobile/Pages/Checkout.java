@@ -1,33 +1,52 @@
 package com.mobile.Pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
-
-import com.Base.MobileBase;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class ProductPage extends MobileBase {
-
-	@AndroidFindBy(accessibility = "productTV")
-	private WebElement titlePage;
+public class Checkout {
 	
-	@AndroidFindBy(accessibility = "new UiSelector().text(\"Sauce Labs Backpack (red)\")")
-	private WebElement product;
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/fullNameET")
+	private WebElement fullName;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/address1ET")
+	private WebElement addressline1;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/address2ET")
+	private WebElement addresslin2;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/cityET")
+	private WebElement city;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/stateET")
+	private WebElement state;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/zipET")
+	private WebElement zipcode;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/countryET")
+	private WebElement country;
+	
+	@AndroidFindBy(accessibility = "Saves user info for checkout")
+	private WebElement toPayment;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/cardNumberET")
+	private WebElement cardName;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/cardNumberET")
+	private WebElement cardNumber;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/expirationDateET")
+	private WebElement expiryDate;
+	
+	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/securityCodeET")
+	private WebElement securityCode;
+	
+	@AndroidFindBy(accessibility = "Saves payment info and launches screen to review checkout data")
+	private WebElement reviewOrder;
 	
 	
-
-//	WebElement el5 = driver.findElement(AppiumBy.accessibilityId("Increase item quantity"));
-//	// Code generation for action 'elementClick' is not currently supported
-//	WebElement el6 = driver.findElement(AppiumBy.accessibilityId("Confirms products for checkout"));
-//	// Code generation for action 'elementClick' is not currently supported
-//	WebElement el7 = driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/nameET"));
-//	// Code generation for action 'elementSendKeys' is not currently supported
-//	WebElement el8 = driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/passwordET"));
-//	// Code generation for action 'elementSendKeys' is not currently supported
-//	WebElement el9 = driver.findElement(AppiumBy.accessibilityId("Tap to login with given credentials"));
-//	// Code generation for action 'elementClick' is not currently supported
+	
 //	WebElement el10 = driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/fullNameET"));
 //	// Code generation for action 'elementSendKeys' is not currently supported
 //	WebElement el11 = driver.findElement(AppiumBy.id("com.saucelabs.mydemoapp.android:id/address1ET"));
@@ -54,22 +73,4 @@ public class ProductPage extends MobileBase {
 //	// Code generation for action 'elementClick' is not currently supported
 //	WebElement el23 = driver.findElement(AppiumBy.accessibilityId("Completes the process of checkout"));
 //	// Code generation for action 'elementClick' is not currently supported
-//
-	
-	
-	
-	
-	
-	
-	
-	
-
-	public ProductPage() {
-		this.driver = getDriver();
-		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-	}
-
-	public String getTitle(String title) {
-		return getAttribute(titlePage, "text");
-	}
 }

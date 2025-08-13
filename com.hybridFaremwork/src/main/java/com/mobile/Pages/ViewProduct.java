@@ -6,7 +6,11 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class ViewProduct {
 
-	@AndroidFindBy(accessibility = "new UiSelector().resourceId(\\\"com.saucelabs.mydemoapp.android:id/productIV\\\").instance(3)")
+//	@AndroidFindBy(accessibility = "new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/productIV\").instance(3)")
+//	private WebElement quantityOfProduct;
+	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true))" +
+		    ".scrollIntoView(new UiSelector().resourceId(\"com.saucelabs.mydemoapp.android:id/productIV\").instance(3)")
 	private WebElement quantityOfProduct;
 	
 	@AndroidFindBy(accessibility = "Tap to add product to cart")
@@ -14,5 +18,11 @@ public class ViewProduct {
 	
 	@AndroidFindBy(accessibility = "com.saucelabs.mydemoapp.android:id/cartIV")
 	private WebElement clickonCart;
+	
+	
+	public void changeOfQunatity()
+	{
+		quantityOfProduct.click();
+	}
 	
 }
